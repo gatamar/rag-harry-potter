@@ -1,0 +1,19 @@
+chunking:
+  target_tokens: 320
+  min_tokens: 160
+  overlap_tokens: 80
+
+artifacts:
+  dir: artifacts
+  chapters_jsonl: artifacts/chapters.jsonl
+  index_file: artifacts/index.faiss
+  chunk_metadata_jsonl: artifacts/chunk_metadata.jsonl
+  chapters_delta_jsonl: artifacts/chapters_delta.jsonl
+  ledger_db: artifacts/retrieval_ledger.db
+
+retrieval_ledger:
+  default_show_limit: 5
+
+telemetry:
+  otlp_grpc_port: 4317
+  jaeger_ui_port: 16686
