@@ -1,0 +1,4 @@
+# Project Interaction Rules
+- Never run any git or git-related commands (e.g., git status, git add, git commit, git diff) in this workspace.
+- Treat the repository as read-only from a version-control perspective; perform all tasks without invoking git.
+- Do not modify `requirements.txt`; leave dependency management to the project owner.

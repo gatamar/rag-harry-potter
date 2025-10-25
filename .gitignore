@@ -1,3 +1,10 @@
 raw-data
 .DS_Store
 venv
+flows/__pycache__
+__pycache__
+artifacts/chapters.jsonl
+artifacts/retrieval_ledger.db
+.env
+artifacts/chunk_metadata.jsonl
+artifacts/index.faiss

@@ -10,6 +10,18 @@ artifacts:
   chunk_metadata_jsonl: artifacts/chunk_metadata.jsonl
   chapters_delta_jsonl: artifacts/chapters_delta.jsonl
   ledger_db: artifacts/retrieval_ledger.db
+  prompt_file: prompts/rag_answer.md
+
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+  batch_size: 32
+
+retrieval:
+  top_k: 5
+
+llm:
+  provider: openai
+  model: gpt-4o-mini
 
 retrieval_ledger:
   default_show_limit: 5

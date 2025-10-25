@@ -1,0 +1,42 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch: {}
+
+exporters:
+  jaeger_storage_exporter:
+    storage:
+      backend: memory
+      memory:
+        max_traces: 20000
+
+extensions:
+  healthcheckv2: {}
+  jaeger_query:
+    admin:
+      http:
+        host: 127.0.0.1
+        port: 16687
+    ui:
+      base_path: /
+  jaeger_storage:
+    backend: memory
+    memory:
+      max_traces: 20000
+
+service:
+  telemetry:
+    metrics:
+      address: 127.0.0.1:8888
+  extensions: [healthcheckv2, jaeger_query, jaeger_storage]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [jaeger_storage_exporter]
